@@ -36,7 +36,8 @@ int main(){
 				}
 				if(j == i+1) {
 					printf("%d",i);
-					exit(0);	
+					exit(0);
+						
 				}
 			}
 			else{
