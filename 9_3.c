@@ -39,8 +39,8 @@ int main(){
 		}
 		
 		num[i] = tmp;
-		for(int l=0;l<=i;l++) printf("%d ",num[l]);
-		printf("\n\n");		
+		//for(int l=0;l<=i;l++) printf("%d ",num[l]);
+		//printf("\n\n");		
 	}
 	for(int i=0;i<q;i++){
 		printf("%d\n",num[query[i]]);
