@@ -29,6 +29,7 @@ int main(){
 			if(count>max) max = count;
 		}
 	}
+//	printf("%d %d\n",max,count);
 	count = 0;
 	for(int i=0;i<m;i++){
 		if(prSum2[i]<=x) {
@@ -36,4 +37,51 @@ int main(){
 			if(count>max) max = count;
 		}
 	}
+//	printf("%d %d\n",max,count);
+	
+	for(int i=0;i<m;i++){
+		int tmp=i+1;
+		int tmpSum=prSum2[i];
+		for(int j=0;j<n;j++){
+			if(arr1[j]+tmpSum<=x){
+				tmp+=1;
+				tmpSum+=arr1[j];
+			}
+			else{
+				break;
+			}
+		}
+		if(tmp>max && tmpSum<=x) {			
+		//	printf("%d %d %d\n",max,tmp,i);	
+			max=tmp;
+		}
+	}
+//	printf("max1:%d\n",max);
+/*	for(int l=0;l<n;l++){
+		printf("%d ",prSum1[l]);
+	}*/
+//	printf("\n");
+	for(int i=0;i<n;i++){
+		int tmp=i+1;
+		int tmpSum = prSum1[i];
+		for(int j=0;j<m;j++){
+			if(arr2[j]+tmpSum<=x){
+				tmp+=1;
+				tmpSum+=arr2[j];
+			}
+			else break;
+		}
+	//	printf("%d %d %d\n",tmpSum,tmp,i);
+		if(tmp>max && tmpSum<=x) {
+		//	printf("%d %d %d\n",max,tmp,i);
+			max=tmp;	
+		}
+	}
+	printf("%d",max);
 }
+
+/*
+5 4 10
+4 2 4 6 1
+2 1 8 5
+*/
